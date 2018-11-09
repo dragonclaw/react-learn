@@ -1,15 +1,20 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable func-names */
+// Create a new component. This component outputs HTML
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+import ReactDom from 'react-dom';
 
-import App from './components/app';
-import reducers from './reducers';
+import SearchBar from './components/searchBar';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+const API_KEY = 'AIzaSyAzScUsiakZwNe853AO9Z8UiFZGOa4mWZk';
 
-ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
-  </Provider>
-  , document.querySelector('.container'));
+const App = () => {
+  return (
+    <div>
+      <SearchBar />
+    </div>
+  );
+};
+
+// Put into the html
+ReactDom.render(<App />, document.querySelector('.container'));
